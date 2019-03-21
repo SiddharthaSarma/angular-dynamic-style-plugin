@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "angular-dynamic-style-plugin-lib": [
+        "dist/angular-dynamic-style-plugin-lib"
+      ],
+      "angular-dynamic-style-plugin-lib/*": [
+        "dist/angular-dynamic-style-plugin-lib/*"
+      ]
+    }
   }
 }

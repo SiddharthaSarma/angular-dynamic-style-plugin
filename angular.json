@@ -130,6 +130,41 @@
           }
         }
       }
+    },
+    "angular-dynamic-style-plugin-lib": {
+      "root": "projects/angular-dynamic-style-plugin-lib",
+      "sourceRoot": "projects/angular-dynamic-style-plugin-lib/src",
+      "projectType": "library",
+      "prefix": "sid",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/angular-dynamic-style-plugin-lib/tsconfig.lib.json",
+            "project": "projects/angular-dynamic-style-plugin-lib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular-dynamic-style-plugin-lib/src/test.ts",
+            "tsConfig": "projects/angular-dynamic-style-plugin-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/angular-dynamic-style-plugin-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular-dynamic-style-plugin-lib/tsconfig.lib.json",
+              "projects/angular-dynamic-style-plugin-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "angular-dynamic-style-plugin"
