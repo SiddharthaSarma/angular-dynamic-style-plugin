@@ -8,9 +8,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "copy-license": "copy .\\LICENSE .\\dist\\ng-example-library",
+    "copy-readme": "copy .\\README.md .\\dist\\ng-example-library",
     "build_lib": "ng build angular-dynamic-style-plugin-lib",
     "npm_pack": "cd dist/angular-dynamic-style-plugin-lib && npm pack",
-    "package": "npm run build_lib && npm run npm_pack"
+    "package": "npm run build_lib && npm run npm_packnpm run build_lib && npm run copy-files && npm run npm_pack"
   },
   "private": true,
   "dependencies": {
