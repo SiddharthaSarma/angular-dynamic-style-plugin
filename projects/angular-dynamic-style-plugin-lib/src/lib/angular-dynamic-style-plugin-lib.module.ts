@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
-import { AngularDynamicStylePluginLibComponent } from './angular-dynamic-style-plugin-lib.component';
 import { ApplyDynamicStylesPipe } from './apply-dynamic-styles.pipe';
 
 @NgModule({
-  declarations: [AngularDynamicStylePluginLibComponent, ApplyDynamicStylesPipe],
+  declarations: [ApplyDynamicStylesPipe],
   imports: [],
-  exports: [AngularDynamicStylePluginLibComponent, ApplyDynamicStylesPipe]
+  exports: [ApplyDynamicStylesPipe]
 })
 export class AngularDynamicStylePluginLibModule {}
