@@ -6,25 +6,20 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ApplyDynamicStylesPipe implements PipeTransform {
   transform(value: any, args?: any): any {
     const val = value.replace(/[\s\n]+/g, '').match(/{(.*?)}/);
-    // console.log(val);
     if (!val) {
       return '';
     }
     const styles = {};
-    const vals = val[1].split(';').forEach(ele => {
+    val[1].split(';').forEach(ele => {
       ele = ele.replace(/[\s\n]+/g, '');
-      if (ele) {
-        const [style, prop] = ele.split(':');
-        const appliedStyle = prop.match(/"(.*?)"/);
-        if (appliedStyle) {
-          styles[style] = appliedStyle[1];
-        } else {
-          styles[style] = prop;
-        }
+      if (!ele) {
+        return styles;
       }
+      const [style, prop] = ele.split(':');
+      const appliedStyle = prop ? prop.match(/"(.*?)"/) : null;
+      styles[style] =
+        appliedStyle && appliedStyle.length ? appliedStyle[1] : prop;
     });
-    // console.log(styles);
-    // return { color: "blue", background: "#ffeeaa" };
     return styles;
   }
 }
